@@ -1,0 +1,101 @@
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background-color: #f0f8ff; /* AliceBlue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff6b6b;
+    text-shadow: 2px 2px #ffd93d;
+    margin-bottom: 10px;
+}
+
+.score-board {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4ecdc4;
+    font-weight: bold;
+}
+
+.instructions {
+    color: #888;
+    margin-top: 10px;
+}
+
+#game-area {
+    width: 100%;
+    height: 400px;
+    background-color: #ffffff;
+    border: 5px solid #ffd93d;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#start-btn {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 10;
+    font-family: inherit;
+}
+
+#start-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: #ff5252;
+}
+
+.smiley {
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    animation: popIn 0.3s ease-out;
+    transition: transform 0.1s;
+}
+
+.smiley:active {
+    transform: scale(0.9);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 0.8s ease-out forwards;
+}
+
+@keyframes fall {
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+}
