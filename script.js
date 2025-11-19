@@ -1,12 +1,22 @@
 const gameArea = document.getElementById('game-area');
 const scoreDisplay = document.getElementById('score');
 const startBtn = document.getElementById('start-btn');
+const languageSelect = document.getElementById('language-select');
 
 let score = 0;
 let gameInterval;
 let isPlaying = false;
 
 const emojis = ['😊', '😄', '😁', '😆', '🥰', '😍', '🤩', '🥳'];
+
+// Initialize language
+languageSelect.value = currentLanguage;
+updateTranslations();
+
+// Language change listener
+languageSelect.addEventListener('change', (e) => {
+    setLanguage(e.target.value);
+});
 
 startBtn.addEventListener('click', startGame);
 
@@ -93,6 +103,6 @@ function endGame() {
     const smileys = document.querySelectorAll('.smiley');
     smileys.forEach(s => s.remove());
     
-    startBtn.textContent = `Game Over! Score: ${score}. Play Again?`;
+    startBtn.textContent = t('gameOver', { score: score });
     startBtn.style.display = 'block';
 }
