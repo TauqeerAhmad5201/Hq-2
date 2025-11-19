@@ -9,6 +9,35 @@ body {
     overflow: hidden;
 }
 
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#language-select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #4ecdc4;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+#language-select:hover {
+    border-color: #ff6b6b;
+}
+
+#language-select:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
 .container {
     text-align: center;
     width: 100%;
